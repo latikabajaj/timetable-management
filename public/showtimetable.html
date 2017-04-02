@@ -1,0 +1,25 @@
+<!-- <p>Login success</p> -->
+<br>
+
+
+<a href="#/timetable" class="btn btn-primary">Edit previous detail</a>
+
+<br>
+
+<h2>Time table details</h2>
+<center ng-if="UserRole=='Student'">
+  <ul class="list-group" ng-repeat="key in TimeTableData track by $index" ng-if="key" style="width: 60%;">
+    <li class="list-group-item"> Subject: <b>{{key.subject.name}}</b> ------ Teacher: <b>{{key.user.name}} {{key.user.email}}</b> </li>
+  </ul>
+</center>
+
+
+<center ng-if="UserRole=='Teacher'">
+  	<ul class="list-group" ng-repeat="key in TimeTableData track by $index" ng-if="key" style="width: 60%;">
+    <li class="list-group-item">Class: <b>{{key.class.name}}</b> ------ Subject: <b>{{key.subject.name}}</b> ------ Student: <b>{{key.user.name}} {{key.user.email}}</b> </li>
+  </ul>
+</center>
+
+<br>
+
+ 

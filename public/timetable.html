@@ -1,0 +1,58 @@
+<!-- <p>Login success</p> -->
+
+<br>
+
+<form  ng-submit="saveClassSubject()" ng-if="UserRole == 'Teacher'">
+	<div class="row">
+	  <div class="col-lg-4" ng-repeat="key in ClassSubject ">
+	    <div class="input-group">
+	      <span class="input-group-addon">
+	      	<input type="checkbox" ng-model="classcheck[key._id].id" ng-value="key._id"  />{{key.name}}
+	      </span>
+	    </div>
+
+	    <div ng-if="classcheck[key._id].id">
+			<div class="input-group" ng-repeat="subject in ClassSubject[$index].subject">
+		      <span class="input-group-addon">
+		      	<input type="checkbox" ng-model="classcheck[key._id].subject[subject._id].id" ng-value="subject._id" />{{subject.name}}
+		      </span>
+		    </div>
+	    </div>
+	    <br>
+	  </div>
+	</div>
+
+	<div class="form-group">
+	  <div class="col-sm-offset-2 col-sm-10">
+	    <button type="submit" class="btn btn-primary" class="btn btn-default">Save</button>
+	  </div>
+	</div>
+</form>
+
+
+<form  ng-submit="saveClass()" ng-if="UserRole == 'Student'">
+	<div class="row">
+	  <div class="col-lg-4" ng-repeat="key in ClassSubject ">
+	    <div class="input-group">
+	      <span class="input-group-addon">
+	      	<input type="radio" name="option" ng-model="StdClass.option" ng-value='key._id' required> {{key.name}}
+	      </span>
+	    </div>
+	    
+	  </div>
+	</div>
+
+	<div class="form-group">
+	  <div class="col-sm-offset-2 col-sm-10">
+	    <button type="submit" class="btn btn-primary" class="btn btn-default">Save</button>
+	  </div>
+	</div>
+</form>
+
+
+
+
+
+
+<form>
+<br>

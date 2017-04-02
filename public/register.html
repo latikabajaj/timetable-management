@@ -1,0 +1,80 @@
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8"> 
+      <br>
+      <h1>User register</h1>
+      <form class="form-horizontal" ng-submit="userRegister()">
+        <div class="alert alert-danger" role="alert" ng-if="message">{{message}}</div>
+      <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 ">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Name" ng-model="user.name" required="Name is required">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 ">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" ng-model="user.email" required="Email is required">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 ">Mobile</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Mobile" ng-model="user.mobile" required="Mobile is required" pattern="\d*" maxlength="10" title="please enter valid mobile number">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 ">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="user.password" required="Password is required">
+          </div>
+        </div>
+
+         <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 ">Date of Birth</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="dob" placeholder="Date of Birth" ng-model="user.dob" required="Date of Birth is required">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 ">Address</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputPassword3" placeholder="Address" ng-model="user.address" required="Address is required">
+          </div>
+        </div>
+
+        <div class="form-group">
+
+          <label for="inputPassword3" class="col-sm-2 ">Choose Role</label>
+          <div class="col-sm-10">
+            <div class="btnradio">
+            <label ng-repeat="role in roles">
+              <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="user.role"  ng-value="role" required> {{role}} &nbsp;
+            
+            </label>
+            </div>
+ 
+          </div>
+        </div>
+        
+        
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" class="btn btn-default">Sign up</button>
+          </div>
+        </div>
+      </form>      
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
